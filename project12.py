@@ -29,7 +29,7 @@ warnings.simplefilter("ignore")
 # =============================================================================
 
 # Load dataset
-ksi_df7 = pd.read_csv("C:/Users/Public/Documents/Centennial College/Supervised Learning/project1/KSI.csv")
+ksi_df7 = pd.read_csv("KSI.csv")
 pd.set_option("display.max_columns", None)
 
 # Display first few rows of the dataset
@@ -232,9 +232,9 @@ ksi_df7["ACCLASS"].replace(
 # Display count of missing values in DataFrame
 ksi_df7.isnull().sum().sort_values()
 
+
 # Fill NaN in "LOCCOORD" column with values from "ACCLOC" where NaN exists
 ksi_df7["LOCCOORD"].fillna(ksi_df7["ACCLOC"], inplace=True)
-
 # Check if there are still columns with null values
 ksi_df7.columns[ksi_df7.isin([np.nan]).any()]
 
